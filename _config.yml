@@ -28,7 +28,8 @@ github_username: vinhnh-dev
 
 # Build settings
 #theme: minima
-theme: just-the-docs
+#theme: just-the-docs
+remote_theme: just-the-docs
 
 permalink: pretty
 
