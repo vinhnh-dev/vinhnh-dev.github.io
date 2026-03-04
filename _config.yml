@@ -29,7 +29,7 @@ github_username: vinhnh-dev
 # Build settings
 #theme: minima
 #theme: just-the-docs
-remote_theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 permalink: pretty
 
@@ -204,6 +204,7 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
   - jekyll-sitemap
+  - jekyll-remote-theme 
 
 kramdown:
   syntax_highlighter_opts:
