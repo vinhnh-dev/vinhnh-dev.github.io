@@ -40,7 +40,13 @@ Source: <https://collabnix.com/docker-cheatsheet/>
 - `docker logs [-f] CONTAINER`: show container output (`-f` to follow)
 - `docker diff CONTAINER`: show filesystem changes compared to the image
 - `docker top CONTAINER...`: show processes in the container
-- `docker inspect --format='{{ .Config.Image }}' CONTAINER`: inspect and extract fields with `--format`
+- `docker inspect --format=... CONTAINER`: inspect and extract fields with `--format`
+
+{% raw %}
+```bash
+docker inspect --format='{{ .Config.Image }}' CONTAINER
+```
+{% endraw %}
 
 ## Interacting with containers
 
