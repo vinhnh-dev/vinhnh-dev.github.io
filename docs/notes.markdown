@@ -115,3 +115,18 @@ $encrypted = '0:YOUR_ENCRYPTED_VALUE_HERE';
 echo $encryptor->decrypt($encrypted) . PHP_EOL;
 
 ```
+
+### Magento 
+
+Test db connection 
+```
+php -r '
+$e=require "app/etc/env.php";
+$c=$e["db"]["connection"]["default"];
+$dsn=sprintf("mysql:host=%s;port=%s;dbname=%s;charset=utf8",$c["host"],$c["port"]??3306,$c["dbname"]);
+$u=$c["username"]; $p=$c["password"];
+$t=microtime(true);
+$pdo=new PDO($dsn,$u,$p,[PDO::ATTR_TIMEOUT=>5]);
+echo "PDO OK in ".round(microtime(true)-$t,3)."s\n";
+'
+```
