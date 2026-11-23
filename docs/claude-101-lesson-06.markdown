@@ -2,8 +2,9 @@
 layout: page
 title: Bài 06 - Artifacts
 permalink: /claude-101-lesson-06/
-parent: Claude
-nav_order: 7
+parent: Claude 101
+grand_parent: Claude
+nav_order: 8
 ---
 
 # Bài 06: Artifacts — Sáng tạo tương tác

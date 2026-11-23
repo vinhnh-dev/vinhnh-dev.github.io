@@ -2,8 +2,9 @@
 layout: page
 title: Bài 08 - Connectors & MCP
 permalink: /claude-101-lesson-08/
-parent: Claude
-nav_order: 9
+parent: Claude 101
+grand_parent: Claude
+nav_order: 10
 ---
 
 # Bài 08: Connectors — Kết nối công cụ qua MCP

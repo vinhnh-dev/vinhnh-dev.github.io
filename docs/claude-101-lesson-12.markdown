@@ -2,8 +2,9 @@
 layout: page
 title: Bài 12 - Các cách khác dùng Claude
 permalink: /claude-101-lesson-12/
-parent: Claude
-nav_order: 13
+parent: Claude 101
+grand_parent: Claude
+nav_order: 14
 ---
 
 # Bài 12: Các cách khác để làm việc với Claude

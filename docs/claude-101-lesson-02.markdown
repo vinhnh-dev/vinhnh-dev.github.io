@@ -2,8 +2,9 @@
 layout: page
 title: Bài 02 - Cuộc trò chuyện đầu tiên
 permalink: /claude-101-lesson-02/
-parent: Claude
-nav_order: 3
+parent: Claude 101
+grand_parent: Claude
+nav_order: 4
 ---
 
 # Bài 02: Cuộc trò chuyện đầu tiên với Claude

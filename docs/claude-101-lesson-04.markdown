@@ -2,8 +2,9 @@
 layout: page
 title: Bài 04 - Claude Desktop
 permalink: /claude-101-lesson-04/
-parent: Claude
-nav_order: 5
+parent: Claude 101
+grand_parent: Claude
+nav_order: 6
 ---
 
 # Bài 04: Claude Desktop — Chat, Cowork, Code

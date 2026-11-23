@@ -2,8 +2,9 @@
 layout: page
 title: Bài 09 - Enterprise Search
 permalink: /claude-101-lesson-09/
-parent: Claude
-nav_order: 10
+parent: Claude 101
+grand_parent: Claude
+nav_order: 11
 ---
 
 # Bài 09: Enterprise Search — Tìm kiếm trên toàn tổ chức

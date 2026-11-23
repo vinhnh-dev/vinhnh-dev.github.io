@@ -2,8 +2,9 @@
 layout: page
 title: Bài 10 - Research mode
 permalink: /claude-101-lesson-10/
-parent: Claude
-nav_order: 11
+parent: Claude 101
+grand_parent: Claude
+nav_order: 12
 ---
 
 # Bài 10: Chế độ Research — Nghiên cứu sâu rộng

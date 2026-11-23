@@ -2,8 +2,9 @@
 layout: page
 title: Bài 03 - Tối ưu kết quả & AI Fluency
 permalink: /claude-101-lesson-03/
-parent: Claude
-nav_order: 4
+parent: Claude 101
+grand_parent: Claude
+nav_order: 5
 ---
 
 # Bài 03: Tối ưu hóa kết quả — AI Fluency & Lặp lại

@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Slide_ Claude_101.pdf
+title: Slide Claude 101
 permalink: /claude-101-slide/
-parent: Claude
+parent: Claude 101
+grand_parent: Claude
 nav_order: 1
 ---
 
-# Slide_ Claude_101
+# Slide Claude 101
 
 <a href="{{ site.baseurl }}/docs/assets/pdf/Slide_Claude_101.pdf" target="_blank">Mo PDF trong tab moi</a>
 

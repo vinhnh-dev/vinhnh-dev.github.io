@@ -2,8 +2,9 @@
 layout: page
 title: Claude 101 - Tổng quan
 permalink: /claude-101-overview/
-parent: Claude
-nav_order: 1
+parent: Claude 101
+grand_parent: Claude
+nav_order: 2
 ---
 
 # Claude 101 — Tổng quan khóa học

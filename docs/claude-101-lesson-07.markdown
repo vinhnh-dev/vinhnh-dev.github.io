@@ -2,8 +2,9 @@
 layout: page
 title: Bài 07 - Skills
 permalink: /claude-101-lesson-07/
-parent: Claude
-nav_order: 8
+parent: Claude 101
+grand_parent: Claude
+nav_order: 9
 ---
 
 # Bài 07: Skills — Đóng gói quy trình

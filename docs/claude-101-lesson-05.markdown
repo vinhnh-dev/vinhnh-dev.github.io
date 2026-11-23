@@ -2,8 +2,9 @@
 layout: page
 title: Bài 05 - Projects
 permalink: /claude-101-lesson-05/
-parent: Claude
-nav_order: 6
+parent: Claude 101
+grand_parent: Claude
+nav_order: 7
 ---
 
 # Bài 05: Projects — Không gian làm việc chuyên dụng

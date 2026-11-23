@@ -2,8 +2,9 @@
 layout: page
 title: Bài 13 - Tổng kết & bước tiếp theo
 permalink: /claude-101-lesson-13/
-parent: Claude
-nav_order: 14
+parent: Claude 101
+grand_parent: Claude
+nav_order: 15
 ---
 
 # Bài 13: Tóm tắt và bước tiếp theo

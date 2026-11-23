@@ -2,8 +2,9 @@
 layout: page
 title: Bài 11 - Claude theo vai trò
 permalink: /claude-101-lesson-11/
-parent: Claude
-nav_order: 12
+parent: Claude 101
+grand_parent: Claude
+nav_order: 13
 ---
 
 # Bài 11: Claude theo vai trò — Use case theo vai trò

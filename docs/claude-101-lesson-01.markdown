@@ -2,8 +2,9 @@
 layout: page
 title: Bài 01 - Claude là gì?
 permalink: /claude-101-lesson-01/
-parent: Claude
-nav_order: 2
+parent: Claude 101
+grand_parent: Claude
+nav_order: 3
 ---
 
 # Bài 01: Claude là gì?
