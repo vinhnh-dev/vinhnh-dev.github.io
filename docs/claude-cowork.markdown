@@ -13,7 +13,6 @@ Ghi chú khóa **Introduction to Claude Cowork** (Anthropic Skilljar), tóm tắ
 
 1. **Làm quen với Cowork** (bài 1-4)
 2. **Biến Cowork thành của bạn** (bài 5-8)
-3. **Dùng Claude ở mọi nơi bạn làm việc** (bài 9-10)
-4. **Chia sẻ và an toàn** (bài 11-14)
+3. **Ở mọi nơi bạn làm việc, chia sẻ và an toàn** (bài 9-14)
 
 **Ý xuyên suốt:** Cowork vượt ra ngoài chat để bạn **giao việc thật** (delegate), không chỉ hỏi đáp.
