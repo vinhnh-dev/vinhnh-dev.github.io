@@ -9,7 +9,7 @@ nav_order: 4
 
 # Module 4
 
-Gồm 9 bài: **Steering Long Sessions**, **A CLAUDE.md That Follows**, **Verification Skills**, **Permission Modes**, **Hooks**, **Routines and Headless**, **GitHub Actions and Code Review**, **Trust It: Verifying Unsupervised Runs**, **Plugins**. *Nội dung xoay quanh Claude Code.*
+Gồm 9 bài: **Steering Long Sessions**, **A CLAUDE.md That Follows**, **Verification Skills**, **Permission Modes**, **Hooks**, **Routines and Headless**, **GitHub Actions and Code Review**, **Trust It: Verifying Unsupervised Runs**, **Plugins**. *Nội dung xoay quanh Claude Code. Các bài dưới đây chỉ nêu phần **mới hoặc sâu hơn**; kiến thức nền xem mục Claude Code 101 (Bài 2.x).*
 
 ## 01. Steering Long Sessions (điều hướng phiên làm việc dài)
 
@@ -17,9 +17,9 @@ Gồm 9 bài: **Steering Long Sessions**, **A CLAUDE.md That Follows**, **Verifi
 
 Việc nhanh thì dễ: hỏi, Claude làm, kiểm tra. Việc dài (refactor hàng chục file, dựng feature mới, kéo dài hàng giờ) thì khác: càng phải điều hướng nhiều, càng kéo dài. Chỉ cần hai thói quen: **chốt phạm vi trước khi Claude bắt đầu** và **điều hướng khi nó chạy**.
 
-## 1. Chốt phạm vi trước với plan mode
+## 1. Chốt phạm vi trước
 
-Trước khi Claude viết dòng code đầu tiên, bắt nó lập kế hoạch. Trong **plan mode** Claude nghiên cứu ở chế độ read-only: đọc code, tìm ra thứ cần đổi, đưa plan để bạn duyệt. **Đọc kỹ plan, đừng lướt:** plan càng kỹ thì càng ít bất ngờ khi thực thi. Thiếu/sai gì thì bảo Claude bổ sung đúng chỗ; chỉnh plan nhanh hơn nhiều so với để Claude chạy rồi dọn hậu quả.
+Dùng **plan mode** để Claude lập kế hoạch read-only trước khi code; đọc kỹ plan và chỉnh tại chỗ (xem Claude Code 101, Bài 2.3-2.4). Chỉnh plan nhanh hơn nhiều so với dọn hậu quả.
 
 ## 2. Điều hướng khi Claude đang chạy
 
@@ -57,16 +57,6 @@ Phần trên giả định bạn trực tiếp theo dõi và chỉnh. Muốn t�
 Một vô lăng cho một xe: chạy nhiều agent trên cùng codebase mà dùng chung file là không an toàn (hai phiên Claude tranh nhau file → xung đột). **Worktree** cho mỗi phiên một **cây file độc lập**, nên không đè thay đổi của nhau. Khi phiên thoát, worktree sạch tự động bị xóa.
 
 File hữu ích: **`.worktreeinclude`** ở root repo liệt kê các file bị git-ignore cần copy vào mỗi worktree (vd file biến môi trường, cấu hình local cần có ở mọi worktree nhưng không commit).
-
-## Tổng hợp thói quen
-
-1. Chốt phạm vi trước, rồi mới điều hướng.
-2. **Định hướng compaction** để bản tóm tắt giữ đúng thứ quan trọng.
-3. Dùng **menu rewind** để chỉnh hướng khi Claude lệch.
-4. Đặt **goal** khi bạn mô tả "xong" tốt hơn mô tả các bước.
-5. Chạy việc song song bằng **worktree**.
-
-Làm vậy, bạn có thể tin tưởng một phiên chạy dài mà không phải canh từng bước.
 
 ---
 
@@ -117,18 +107,7 @@ Khi đã quyết định luật thuộc CLAUDE.md, việc Claude có tuân thủ
 
 ### Giữ file luôn được chỉnh sửa
 
-CLAUDE.md không bao giờ "xong"; hãy coi như code sống. Khi Claude làm sai, đừng thở dài rồi tự sửa tay: coi đó là **bug report cho CLAUDE.md**; có thể nói thẳng "add that to the CLAUDE.md file" để Claude viết luật cho bạn. Mỗi lần có sự cố, file tốt hơn.
-
-### Tổng hợp
-
-Coi CLAUDE.md như production code: **không biện minh được dòng nào thì xóa.**
-1. Luật cứng → **hook** (được cưỡng chế thật).
-2. File dài → tổ chức bằng import (nhớ import không giảm context).
-3. Mỗi luật **cụ thể, kiểm chứng được, nêu cái thay thế**.
-4. Chi tiêu **ngân sách nhấn mạnh** cho vài luật quan trọng nhất.
-5. Liên tục chỉnh sửa mỗi khi Claude sai.
-
-Ý cốt lõi: **file càng gọn, Claude càng làm theo.**
+Coi mỗi lần Claude làm sai như một **bug report cho CLAUDE.md** ("add that to the CLAUDE.md file"). Coi CLAUDE.md như production code: không biện minh được dòng nào thì xóa. (Cách thiết lập và phím `#`: xem Bài 2.7.)
 
 ---
 
@@ -162,15 +141,7 @@ Kết luận: giữ `skill.md` gọn; đẩy phần nặng (giải thích dài, 
 
 ### Bề mặt chỉ dẫn nào sở hữu luật nào
 
-| Loại | Đặt ở đâu |
-|---|---|
-| **Quy ước áp dụng mọi lúc** (quy tắc đặt tên, file để đâu) | `CLAUDE.md` |
-| **Quy trình và tài liệu tham khảo gắn với một loại task** | **Skill** |
-| **Luật Claude không được phép bỏ qua** | **Hook** (CLAUDE.md và skill đều là chỉ dẫn Claude *làm theo*, còn hook là code *thực sự chạy*; nếu bỏ qua là không chấp nhận được thì đừng để phụ thuộc vào việc làm theo chỉ dẫn) |
-
-### Tóm tắt
-
-Skill là một thư mục chứa `skill.md`: tên, description kích hoạt, và chính quy trình. Chỉ **description** được nạp vào context cho đến khi skill thực sự cần, nên gói mọi quy trình lặp lại không tốn chi phí gì. **Bắt đầu từ verification:** xây skill, commit vào `.claude/skills` của dự án, và cả team thừa hưởng cùng một nước đi: công việc của mọi người được kiểm theo cùng một cách, tự động, không ai phải nhớ yêu cầu.
+Quy ước luôn áp dụng → CLAUDE.md; quy trình theo loại task → skill; luật **không được phép bỏ qua** → hook (so sánh đầy đủ ở Bài 2.9 và 2.11).
 
 ---
 
@@ -203,20 +174,13 @@ Auto là chế độ "không cầm tay": Claude tự chạy, nhưng trước m�
 
 Hợp khi không có ai duyệt prompt: **CI pipeline, scheduled job, batch qua đêm.** Chỉ tool đã duyệt trước được phép, thứ gì ngoài danh sách bị từ chối tự động: pipeline tiếp tục chạy thay vì treo chờ một sự đồng ý không ai ở đó để cho.
 
-### Chọn mode theo công việc
-
-- **Auto:** không cầm tay; classifier kiểm ý định trước từng hành động, stop hook kiểm tính đúng đắn sau.
-- **Don't ask:** pipeline không người trông.
-- **Bypass permissions:** chỉ trong container/VM cô lập.
-- Chọn mode khớp việc đang làm và để Claude chạy ở mức đó.
-
 ---
 
 ## 05. Hooks
 
 ### Ý chính
 
-Bảo Claude làm gì đó trong CLAUDE.md là **lời yêu cầu, không phải bảo đảm**: "luôn format sau khi sửa" thì Claude *thường* nghe; nhưng trong phiên dài bạn không theo dõi, "thường" là không đủ. **Hook** là code **tất định** chạy tại một điểm cố định trong vòng lặp, nên *bảo đảm* hành vi thay vì hy vọng: biến luật từ "Claude thường nghe" thành "Claude không thể bỏ qua".
+Hook là code **tất định** chạy tại điểm cố định trong vòng lặp: biến luật "Claude thường theo" thành "Claude không thể bỏ qua" (khái niệm cơ bản và cấu hình `settings.json`: xem Bài 2.11). Phần dưới chỉ nêu các điểm **sâu hơn**.
 
 ### Các hook event
 
@@ -272,10 +236,6 @@ Với PreToolUse trên tool Bash: **matcher** chọn tool cần canh, mệnh đ�
 ### Giữ trạng thái qua compact
 
 Khi Claude compact hội thoại dài, nó bỏ nhiều chi tiết. Hook **`SessionStart` với matcher `compact`** chạy ngay sau compaction: cho nó in ra một bản tóm tắt ngắn về các file đang làm; bản tóm tắt đó quay lại context, Claude tiếp tục đúng chỗ thay vì bắt đầu nguội.
-
-### Tổng kết
-
-Hook biến luật Claude *thường* theo thành luật *luôn* theo. Đừng chỉ dừng ở auto-format: canh tool bằng **PreToolUse**, chặn kết thúc turn bằng **Stop**, giữ trạng thái qua compact bằng **SessionStart**. Thiết lập tốn chút công đầu, nhưng đền lại ngay lần đầu nó bắt được lỗi trong một lần chạy bạn không theo dõi.
 
 ---
 
@@ -395,12 +355,6 @@ Ai đó viết `@claude implement the spec in the linked Linear issue` trên PR,
 - **Permission mode:** job không người trông thì đặt để *không dừng hỏi* (không ai trả lời).
 - **Allowed tools:** cho đúng thứ job cần, không hơn; báo cáo thì chỉ đọc.
 
-### Chọn cái nào?
-
-- **Review PR → đường managed:** bật Code Review, để GitHub app đăng finding inline, áp dụng fix local bằng `/code-review --fix`.
-- **Việc vượt review → Action:** `/install-github-app` để setup, một workflow cho mention `@claude`, một cho cron, mọi tinh chỉnh nằm trong `claude_args`.
-- **Bắt đầu với dịch vụ managed**; chuyển sang action ngay khi cần Claude *làm* gì đó trong CI, không chỉ comment.
-
 ---
 
 ## 08. Trust It: Verifying Unsupervised Runs (kiểm chứng các lần chạy không giám sát)
@@ -428,16 +382,6 @@ Chi tiết then chốt là **exit code**: hook thoát bằng **exit 2** đưa th
 ### Xin ý kiến thứ hai "lạnh"
 
 Subagent code review bạn chạy trước PR dùng được cả ở đây: mở **phiên mới hoặc subagent** và cho nó review code đã đổi mà **không nhớ** code được dựng thế nào. Vì không có lợi ích gắn với cách tiếp cận, nó bắt được thứ lần chạy gốc đã tự thuyết phục mình bỏ qua. Người review thứ hai với con mắt mới thấy điều tác giả đã biện minh cho qua.
-
-### Tổng hợp
-
-Làm kiểm tra nghiêm túc tương xứng với mức không giám sát:
-1. **Tự đọc diff.**
-2. **Biến test thành hook** chặn turn.
-3. Với headless run, **kiểm bằng kết quả JSON và exit code**.
-4. Lấy **ý kiến thứ hai lạnh** cho bất cứ thứ gì quan trọng.
-
-Làm vậy thì "Claude làm trong lúc tôi không nhìn" không còn cần đến niềm tin.
 
 ---
 
@@ -488,10 +432,3 @@ Cấu trúc thư mục làm phần lớn việc: Claude Code khám phá thành p
 ```
 
 Bỏ manifest thì Claude Code vẫn khám phá thành phần theo quy ước thư mục. **`name` là trường bắt buộc duy nhất**, đóng vai namespace cho skill (`company-name:skill-name`) để không đụng skill của người khác. **Đặt version như mọi dependency**: giúp cập nhật và theo dõi version trong team.
-
-### Điều cần nhớ
-
-1. **Dùng plugin: đọc trước khi cài.** Plugin chạy code với quyền của bạn; xem hook, agent, MCP server của nó trước.
-2. **Xây plugin: đóng gói `.claude` ngay khi nó chạy tốt.** Một manifest, một lần cài.
-
-Một đơn vị cài đặt, và setup bạn tin cậy đến được cả team.
